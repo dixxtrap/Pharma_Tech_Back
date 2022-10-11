@@ -23,7 +23,6 @@ public class Pharmacie implements Serializable {
     private String longitude;
     private String laltitude;
     private String dateInsertion;
-    private String image;
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinTable(name = "pharmacie_images",
     joinColumns = {

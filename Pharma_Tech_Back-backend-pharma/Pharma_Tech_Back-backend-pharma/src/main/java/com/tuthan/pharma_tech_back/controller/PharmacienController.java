@@ -30,9 +30,9 @@ public class PharmacienController {
 
 
     //Ajout de Pharmacie
-    @PostMapping(value = "/addpharmcie",consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+    @PostMapping(value = {"/addpharmcie"},consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public Pharmacie createPharmcie(@RequestPart("pharmacie") Pharmacie pharmacie,
-                               @RequestPart("imageFile") MultipartFile [] file)  {
+                               @RequestPart(value = "imageFile") MultipartFile[] file)  {
         try {
            Set<ImagesModel> images = uploadImage(file);
            pharmacie.setPharmacieImage(images);
